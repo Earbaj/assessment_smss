@@ -1,8 +1,7 @@
 import 'package:dartz/dartz.dart';
 import '../../../../core/errors/failures.dart';
-import '../entities/sms_response.dart';
-import '../repositories/sms_repository.dart';
-
+import '../entity/sms_response_entity.dart';
+import '../repository/sms_repository.dart';
 class SendSmsUseCase {
   final SmsRepository repository;
 
