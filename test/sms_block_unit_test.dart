@@ -3,13 +3,13 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:sms_console_app/core/errors/failures.dart';
-import 'package:sms_console_app/features/sms_console/domain/entities/cost_breakdown.dart';
-import 'package:sms_console_app/features/sms_console/domain/entities/sms_response.dart';
+import 'package:sms_console_app/features/sms_console/domain/entities/cost_breakdown_entity.dart';
+import 'package:sms_console_app/features/sms_console/domain/entities/sms_response_entity.dart';
 import 'package:sms_console_app/features/sms_console/domain/usecases/get_cost_breakdown_usecase.dart';
 import 'package:sms_console_app/features/sms_console/domain/usecases/send_sms_usecase.dart';
 import 'package:sms_console_app/features/sms_console/presentation/bloc/sms_bloc.dart';
-import 'package:sms_console_app/features/sms_console/presentation/bloc/sms_event.dart';
-import 'package:sms_console_app/features/sms_console/presentation/bloc/sms_state.dart';
+import 'package:sms_console_app/features/sms_console/presentation/event/sms_event.dart';
+import 'package:sms_console_app/features/sms_console/presentation/state/sms_state.dart';
 
 class MockGetCostBreakdownUseCase extends Mock implements GetCostBreakdownUseCase {}
 class MockSendSmsUseCase extends Mock implements SendSmsUseCase {}
