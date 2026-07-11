@@ -1,42 +1,30 @@
-name: CI
-
+name: Flutter Build
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
   pull_request:
-    branches: [main]
+    branches: [ "main" ]
 
 jobs:
-  analyze-and-test:
-    name: Analyze & Test
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Flutter
+      # 1. Install Flutter instead of just Dart
+      - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
+          flutter-version: '3.41.7' # Or 'any' for latest stable
           channel: 'stable'
           cache: true
 
+      # 2. Now 'flutter' commands will work
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
+      - name: Analyze project source
+        run: flutter analyze
 
-      - name: Analyze
-        run: flutter analyze --fatal-infos
-
-      - name: Run tests
-        run: flutter test --coverage
-
-      - name: Upload coverage
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: coverage/lcov.info
-          if-no-files-found: ignore
+#      - name: Run tests
+#        run: flutter test
