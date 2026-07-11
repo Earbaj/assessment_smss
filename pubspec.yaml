@@ -1,4 +1,4 @@
-name: sms_console_app
+name: sms_console
 description: "A clean architecture SMS Console app with BLoC and Dio."
 version: 1.0.0+1
 
