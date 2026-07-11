@@ -1,4 +1,4 @@
-import '../../domain/entities/cost_breakdown.dart';
+import '../../domain/entity/cost_breakdown_entity.dart';
 
 abstract class SmsState {}
 
