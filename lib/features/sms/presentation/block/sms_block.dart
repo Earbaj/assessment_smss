@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../domain/usecases/get_cost_breakdown_usecase.dart';
-import '../../domain/usecases/send_sms_usecase.dart';
-import 'sms_event.dart';
-import 'sms_state.dart';
+import '../../domain/usecase/get_cost_breakdown_usecase.dart';
+import '../../domain/usecase/send_sms_usecase.dart';
+import '../event/sms_event.dart';
+import '../state/sms_state.dart';
 
 class SmsBloc extends AppBloc<SmsEvent, SmsState> {
   final GetCostBreakdownUseCase getCostBreakdownUseCase;
